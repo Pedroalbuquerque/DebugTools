@@ -17,7 +17,8 @@
 
 #if defined(DEBUG_PORT)
 
-    #if defined( ARDUINO_AVR_MOTEINO) || defined(ARDUINO_AVR_MOTEINOMEGA) || defined(ARDUINO_AVR_NANO) || defined(__AVR_ATmega1284P__)  || defined(__AVR_ATmega328P__)
+    //#if defined( ARDUINO_AVR_MOTEINO) || defined(ARDUINO_AVR_MOTEINOMEGA) || defined(ARDUINO_AVR_NANO) || defined(__AVR_ATmega1284P__)  || defined(__AVR_ATmega328P__)
+    #if defined(AVR)
       #define DEBUG_MSG(...) sprintf( buf,__VA_ARGS__ );DEBUG_PORT.print(buf);
     #else
       #define DEBUG_MSG(...) DEBUG_PORT.printf( __VA_ARGS__ );
